@@ -1,0 +1,219 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "An API for managing contacts, allowing users to create, read, update, and delete contact information.",
+    "version": "1.0.0"
+  },
+  "host": "cse341-course-0ti4.onrender.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Contacts",
+      "description": "Endpoints for managing contacts"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/contacts": {
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Create a new contact",
+        "description": "Adds a new contact to the database.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Contact information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ContactInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Contact created successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get all contacts",
+        "description": "Returns every contact stored in the database.",
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get one contact",
+        "description": "Returns a single contact by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Contact ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact found"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Update a contact",
+        "description": "Updates an existing contact by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Contact ID"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Fields to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ContactInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact updated successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Delete a contact",
+        "description": "Deletes a contact from the database by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Contact ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact deleted successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ContactInput": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": "Blue"
+        },
+        "birthday": {
+          "type": "string",
+          "example": "1990-01-01"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "example": "64c1f0b2a5d9e2c3b4a5d6e7"
+        },
+        "firstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": "Blue"
+        },
+        "birthday": {
+          "type": "string",
+          "example": "1990-01-01"
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2024-01-01T12:00:00.000Z"
+        }
+      }
+    }
+  }
+}

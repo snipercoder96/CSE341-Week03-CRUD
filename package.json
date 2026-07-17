@@ -18,7 +18,9 @@
     "test": "npm run dev",
     "dev": "nodemon server.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "start": "node server.js", 
+    "build": "echo 'No build step'"
   },
   "dependencies": {
     "celebrate": "^12.1.2",

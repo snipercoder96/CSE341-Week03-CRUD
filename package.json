@@ -20,7 +20,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "node server.js",
-    "build": "echo 'No build step'"
+    "build": "npm install"
   },
   "dependencies": {
     "celebrate": "^12.1.2",

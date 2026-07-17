@@ -1,0 +1,32 @@
+{
+  "name": "cse341-week03-crud",
+  "version": "1.0.0",
+  "description": "This week we will explore CRUD operations, Error handling, Authentication.",
+  "homepage": "https://github.com/snipercoder96/CSE341-Week03-CRUD#readme",
+  "bugs": {
+    "url": "https://github.com/snipercoder96/CSE341-Week03-CRUD/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snipercoder96/CSE341-Week03-CRUD.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "dependencies": {
+    "celebrate": "^12.1.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "http-errors": "^2.0.1",
+    "mongodb": "^7.5.0",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

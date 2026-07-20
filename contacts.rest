@@ -1,0 +1,36 @@
+@baseUrl = https://cse341-week03-crud.onrender.com
+
+### Get all contacts
+GET {{baseUrl}}/contacts
+
+### Get a single contact by ID
+GET {{baseUrl}}/contacts/6a5e0973691e57bd012d8b3c
+
+### Create a new contact
+POST {{baseUrl}}/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Sam",
+  "lastName": "Nguyen",
+  "email": "sam.nguyen@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1998-11-23"
+}
+
+
+
+### Update an existing contact
+PUT {{baseUrl}}/contacts/6a5e07aafa3889691a73858c
+Content-Type: application/json
+
+{
+  "firstName": "Kevin",
+  "lastName": "",
+  "email": "kevin.kiyindou@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "2000-04-16"
+}
+
+### Delete a contact
+DELETE {{baseUrl}}/contacts/6a526aa8b677d3fe0dd063d9

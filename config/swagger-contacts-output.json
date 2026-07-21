@@ -175,116 +175,368 @@
     "ContactInput": {
       "type": "object",
       "properties": {
-        "firstName": {
+        "type": {
           "type": "string",
-          "example": "John"
+          "example": "object"
         },
-        "lastName": {
-          "type": "string",
-          "example": "Doe"
-        },
-        "email": {
-          "type": "string",
-          "example": "john@example.com"
-        },
-        "favoriteColor": {
-          "type": "string",
-          "example": "Blue"
-        },
-        "birthday": {
-          "type": "string",
-          "example": "1990-01-01"
+        "properties": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "John"
+                }
+              }
+            },
+            "lastName": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "Doe"
+                }
+              }
+            },
+            "email": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "john@example.com"
+                }
+              }
+            },
+            "favoriteColor": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "Blue"
+                }
+              }
+            },
+            "birthday": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "1990-01-01"
+                }
+              }
+            }
+          }
         }
       }
     },
     "Contact": {
       "type": "object",
       "properties": {
-        "_id": {
+        "type": {
           "type": "string",
-          "example": "64c1f0b2a5d9e2c3b4a5d6e7"
+          "example": "object"
         },
-        "firstName": {
-          "type": "string",
-          "example": "John"
-        },
-        "lastName": {
-          "type": "string",
-          "example": "Doe"
-        },
-        "email": {
-          "type": "string",
-          "example": "john@example.com"
-        },
-        "favoriteColor": {
-          "type": "string",
-          "example": "Blue"
-        },
-        "birthday": {
-          "type": "string",
-          "example": "1990-01-01"
-        },
-        "createdAt": {
-          "type": "string",
-          "example": "2024-01-01T12:00:00.000Z"
+        "properties": {
+          "type": "object",
+          "properties": {
+            "_id": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "64c1f0b2a5d9e2c3b4a5d6e7"
+                }
+              }
+            },
+            "firstName": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "John"
+                }
+              }
+            },
+            "lastName": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "Doe"
+                }
+              }
+            },
+            "email": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "john@example.com"
+                }
+              }
+            },
+            "favoriteColor": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "Blue"
+                }
+              }
+            },
+            "birthday": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "1990-01-01"
+                }
+              }
+            },
+            "createdAt": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "2024-01-01T12:00:00.000Z"
+                }
+              }
+            }
+          }
         }
       }
     },
     "BookInput": {
       "type": "object",
       "properties": {
-        "title": {
+        "type": {
           "type": "string",
-          "example": "The Great Gatsby"
+          "example": "object"
         },
-        "author": {
-          "type": "string",
-          "example": "F. Scott Fitzgerald"
-        },
-        "genre": {
-          "type": "string",
-          "example": "Classic"
-        },
-        "publishedYear": {
-          "type": "number",
-          "example": 1925
-        },
-        "description": {
-          "type": "string",
-          "example": "A novel about the American Dream."
+        "properties": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "The Great Gatsby"
+                }
+              }
+            },
+            "author": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "F. Scott Fitzgerald"
+                }
+              }
+            },
+            "genre": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "Classic"
+                }
+              }
+            },
+            "publishedYear": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "number"
+                },
+                "example": {
+                  "type": "number",
+                  "example": 1925
+                }
+              }
+            },
+            "description": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "A novel about the American Dream."
+                }
+              }
+            }
+          }
         }
       }
     },
     "Book": {
       "type": "object",
       "properties": {
-        "_id": {
+        "type": {
           "type": "string",
-          "example": "64c1f0b2a5d9e2c3b4a5d6e8"
+          "example": "object"
         },
-        "title": {
-          "type": "string",
-          "example": "The Great Gatsby"
-        },
-        "author": {
-          "type": "string",
-          "example": "F. Scott Fitzgerald"
-        },
-        "genre": {
-          "type": "string",
-          "example": "Classic"
-        },
-        "publishedYear": {
-          "type": "number",
-          "example": 1925
-        },
-        "description": {
-          "type": "string",
-          "example": "A novel about the American Dream."
-        },
-        "createdAt": {
-          "type": "string",
-          "example": "2024-01-01T12:00:00.000Z"
+        "properties": {
+          "type": "object",
+          "properties": {
+            "_id": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "64c1f0b2a5d9e2c3b4a5d6e8"
+                }
+              }
+            },
+            "title": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "The Great Gatsby"
+                }
+              }
+            },
+            "author": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "F. Scott Fitzgerald"
+                }
+              }
+            },
+            "genre": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "Classic"
+                }
+              }
+            },
+            "publishedYear": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "number"
+                },
+                "example": {
+                  "type": "number",
+                  "example": 1925
+                }
+              }
+            },
+            "description": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "A novel about the American Dream."
+                }
+              }
+            },
+            "createdAt": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "example": {
+                  "type": "string",
+                  "example": "2024-01-01T12:00:00.000Z"
+                }
+              }
+            }
+          }
         }
       }
     }

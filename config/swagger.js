@@ -1,3 +1,4 @@
+require('dotenv').config();
 const swaggerAutogen = require('swagger-autogen')();
 
 const contactsDoc = {

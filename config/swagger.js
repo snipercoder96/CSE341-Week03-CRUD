@@ -6,8 +6,8 @@ const baseDoc = {
         description: 'An API for managing contacts and books, including create, read, update, and delete operations for both collections.',
         version: '1.0.0',
     },
-    host: 'cse341-course-0ti4.onrender.com',
-    schemes: ['https'],
+    host: process.env.SWAGGER_HOST || 'localhost:3000',
+    schemes: ['http', 'https'],
     tags: [
         {
             name: 'Contacts',

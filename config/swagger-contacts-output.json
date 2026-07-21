@@ -5,7 +5,7 @@
     "description": "Detailed Swagger documentation for the contacts collection CRUD endpoints.",
     "version": "1.0.0"
   },
-  "host": "cse341-course-0ti4.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "tags": [
     {
@@ -18,6 +18,7 @@
     }
   ],
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {

@@ -1,0 +1,281 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Books API",
+    "description": "Detailed Swagger documentation for the books collection CRUD endpoints.",
+    "version": "1.0.0"
+  },
+  "host": "cse341-course-0ti4.onrender.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Contacts",
+      "description": "Endpoints for managing contacts"
+    },
+    {
+      "name": "Books",
+      "description": "Endpoints for managing books"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/books": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Create a new book",
+        "description": "Adds a new book to the database.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Book information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BookInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Book created successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Get all books",
+        "description": "Returns every book stored in the database.",
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "No books found"
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Get one book",
+        "description": "Returns a single book by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Book ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book found"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Book not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Update a book",
+        "description": "Updates an existing book by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Book ID"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Fields to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BookInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book updated successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Book not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Delete a book",
+        "description": "Deletes a book from the database by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Book ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book deleted successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Book not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ContactInput": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": "Blue"
+        },
+        "birthday": {
+          "type": "string",
+          "example": "1990-01-01"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "example": "64c1f0b2a5d9e2c3b4a5d6e7"
+        },
+        "firstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": "Blue"
+        },
+        "birthday": {
+          "type": "string",
+          "example": "1990-01-01"
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2024-01-01T12:00:00.000Z"
+        }
+      }
+    },
+    "BookInput": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "The Great Gatsby"
+        },
+        "author": {
+          "type": "string",
+          "example": "F. Scott Fitzgerald"
+        },
+        "genre": {
+          "type": "string",
+          "example": "Classic"
+        },
+        "publishedYear": {
+          "type": "number",
+          "example": 1925
+        },
+        "description": {
+          "type": "string",
+          "example": "A novel about the American Dream."
+        }
+      }
+    },
+    "Book": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "example": "64c1f0b2a5d9e2c3b4a5d6e8"
+        },
+        "title": {
+          "type": "string",
+          "example": "The Great Gatsby"
+        },
+        "author": {
+          "type": "string",
+          "example": "F. Scott Fitzgerald"
+        },
+        "genre": {
+          "type": "string",
+          "example": "Classic"
+        },
+        "publishedYear": {
+          "type": "number",
+          "example": 1925
+        },
+        "description": {
+          "type": "string",
+          "example": "A novel about the American Dream."
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2024-01-01T12:00:00.000Z"
+        }
+      }
+    }
+  }
+}

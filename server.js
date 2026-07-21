@@ -2,11 +2,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const contactsRouter = require('./routes/contacts');
+const booksRouter = require('./routes/books');
 const mongoDb = require('./models/db/connection ');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const { errors: celebrateErrors } = require('celebrate');
 const swaggerFile = require('./config/swagger-output.json');
+const booksSwaggerFile = require('./config/swagger-books-output.json');
 const { errors, globalErrors } = require('./controllers/errors/errors');
 const routers = require('./routes/contacts');
 
@@ -24,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // Uses body-parser middlewa
 
 // Hook Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/api-docs-books', swaggerUi.serve, swaggerUi.setup(booksSwaggerFile));
 
 (async function startServer() {
     try {
@@ -40,6 +43,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(routers);
 app.use(contactsRouter);
+app.use(booksRouter);
 app.use(celebrateErrors()); // W03 Example approach to implement RPC (Remote Procedure Call) using Express.js and JSON-RPC 2.0 specification
 app.use(errors);
 app.use(globalErrors);

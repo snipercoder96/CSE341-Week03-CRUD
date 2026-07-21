@@ -25,8 +25,8 @@ app.use(bodyParser.json()); // Uses body-parser middleware to parse JSON request
 app.use(bodyParser.urlencoded({ extended: true })); // Uses body-parser middleware to parse URL-encoded request bodies
 
 // Hook Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(contactsSwaggerFile));
-app.use('/api-docs-books', swaggerUi.serve, swaggerUi.setup(booksSwaggerFile));
+app.use('/api-docs-contacts', swaggerUi.serve, swaggerUi.setup(contactsSwaggerFile)); // contacts API
+app.use('/api-docs-books', swaggerUi.serve, swaggerUi.setup(booksSwaggerFile)); // books API
 
 (async function startServer() {
     try {

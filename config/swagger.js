@@ -1,6 +1,6 @@
 const swaggerAutogen = require('swagger-autogen')();
 
-const sharedDoc = {
+const baseDoc = {
     info: {
         title: 'Contacts and Books API',
         description: 'An API for managing contacts and books, including create, read, update, and delete operations for both collections.',
@@ -54,19 +54,40 @@ const sharedDoc = {
     },
 };
 
-const booksDoc = {
-    ...sharedDoc,
+const contactsDoc = {
+    ...baseDoc,
     info: {
-        ...sharedDoc.info,
+        ...baseDoc.info,
+        title: 'Contacts API',
+        description: 'Detailed Swagger documentation for the contacts collection CRUD endpoints.',
+    },
+};
+
+const booksDoc = {
+    ...baseDoc,
+    info: {
+        ...baseDoc.info,
         title: 'Books API',
         description: 'Detailed Swagger documentation for the books collection CRUD endpoints.',
     },
 };
 
-const outputFile = './config/swagger-output.json';
-const booksOutputFile = './config/swagger-books-output.json';
-const endpointsFiles = ['./routes/contacts.js', './routes/books.js'];
-const booksEndpointsFiles = ['./routes/books.js'];
+const combinedDoc = {
+    ...baseDoc,
+    info: {
+        ...baseDoc.info,
+        title: 'Contacts and Books API',
+        description: 'Combined Swagger documentation for the contacts and books collections.',
+    },
+};
 
-swaggerAutogen(outputFile, endpointsFiles, sharedDoc);
+const contactsOutputFile = './config/swagger-contacts-output.json';
+const booksOutputFile = './config/swagger-books-output.json';
+const combinedOutputFile = './config/swagger-output.json';
+const contactsEndpointsFiles = ['./routes/contacts.js'];
+const booksEndpointsFiles = ['./routes/books.js'];
+const combinedEndpointsFiles = ['./routes/contacts.js', './routes/books.js'];
+
+swaggerAutogen(contactsOutputFile, contactsEndpointsFiles, contactsDoc);
 swaggerAutogen(booksOutputFile, booksEndpointsFiles, booksDoc);
+swaggerAutogen(combinedOutputFile, combinedEndpointsFiles, combinedDoc);

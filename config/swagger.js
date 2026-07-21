@@ -8,7 +8,7 @@ const contactsDoc = {
         version: '1.0.0',
     },
     host: process.env.SWAGGER_HOST || 'localhost:3000',
-    schemes: ['http', 'https'],
+    schemes: ['https', 'http'],
     tags: [
         {
             name: 'Contacts',
@@ -42,7 +42,7 @@ const booksDoc = {
         version: '1.0.0',
     },
     host: process.env.SWAGGER_HOST || 'localhost:3000',
-    schemes: ['http', 'https'],
+    schemes: ['https', 'http'],
     tags: [
         {
             name: 'Books',

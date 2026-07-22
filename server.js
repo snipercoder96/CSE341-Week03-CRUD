@@ -1,8 +1,12 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const session = require('express-session');
+const passport = require('./config/passport');
+
 const contactsRouter = require('./routes/contacts');
 const booksRouter = require('./routes/books');
+const authRouter = require('./routes/auth');
 const mongoDb = require('./models/db/connection ');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
@@ -19,14 +23,24 @@ const app = express();
 
 /* middleware:
 - body parser
+- session + passport
 - swagger ui
  */
-app.use(bodyParser.json()); // Uses body-parser middleware to parse JSON request bodies
-app.use(bodyParser.urlencoded({ extended: true })); // Uses body-parser middleware to parse URL-encoded request bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Session + Passport — must come before any route that checks req.isAuthenticated / req.user
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Hook Swagger UI
-app.use('/api-docs-contacts', swaggerUi.serveFiles(contactsSwaggerFile, {}), swaggerUi.setup(contactsSwaggerFile)); // 
-app.use('/api-docs-books', swaggerUi.serveFiles(booksSwaggerFile, {}), swaggerUi.setup(booksSwaggerFile)); // books API
+app.use('/api-docs-contacts', swaggerUi.serveFiles(contactsSwaggerFile, {}), swaggerUi.setup(contactsSwaggerFile));
+app.use('/api-docs-books', swaggerUi.serveFiles(booksSwaggerFile, {}), swaggerUi.setup(booksSwaggerFile));
 
 (async function startServer() {
     try {
@@ -40,10 +54,10 @@ app.use('/api-docs-books', swaggerUi.serveFiles(booksSwaggerFile, {}), swaggerUi
     }
 })();
 
-
+app.use(authRouter);
 app.use(routers);
 app.use(contactsRouter);
 app.use(booksRouter);
-app.use(celebrateErrors()); // W03 Example approach to implement RPC (Remote Procedure Call) using Express.js and JSON-RPC 2.0 specification
+app.use(celebrateErrors());
 app.use(errors);
 app.use(globalErrors);

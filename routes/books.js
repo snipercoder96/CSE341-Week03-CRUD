@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const { celebrate, Joi, Segments } = require('celebrate');
 const bookControllers = require('../controllers/books');
+const isAuthenticated = require('../middleware/isAuthenticated');
+
+
+router.use(isAuthenticated); // protects everything below
 
 const bookBodySchema = Joi.object({
     title: Joi.string().trim().required(),

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { celebrate, Joi, Segments } = require('celebrate');
 const contactServers = require('../controllers/contacts');
+const isAuthenticated = require('../middleware/isAuthenticated');
+
 
 const contactBodySchema = Joi.object({
     firstName: Joi.string().trim().required(),
@@ -18,6 +20,8 @@ const validateContactBody = celebrate({
 router.get('/', (req, res) => {
     res.json({ message: 'Welcome to the Contacts API' });
 });
+
+router.use(isAuthenticated); 
 
 router.post('/contacts', validateContactBody, (req, res, next) => {
     /*

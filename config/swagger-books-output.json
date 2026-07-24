@@ -17,6 +17,18 @@
     "https",
     "http"
   ],
+  "securityDefinitions": {
+    "googleAuth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "tokenUrl": "https://oauth2.googleapis.com/token",
+      "scopes": {
+        "profile": "Access your profile info",
+        "email": "Access your email address"
+      }
+    }
+  },
   "paths": {
     "/books": {
       "post": {
@@ -42,8 +54,19 @@
           },
           "400": {
             "description": "Invalid request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "googleAuth": [
+              "profile",
+              "email"
+            ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -58,10 +81,21 @@
           "400": {
             "description": "Invalid request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "No books found"
           }
-        }
+        },
+        "security": [
+          {
+            "googleAuth": [
+              "profile",
+              "email"
+            ]
+          }
+        ]
       }
     },
     "/books/{id}": {
@@ -87,10 +121,21 @@
           "400": {
             "description": "Invalid request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Book not found"
           }
-        }
+        },
+        "security": [
+          {
+            "googleAuth": [
+              "profile",
+              "email"
+            ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -123,10 +168,21 @@
           "400": {
             "description": "Invalid request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Book not found"
           }
-        }
+        },
+        "security": [
+          {
+            "googleAuth": [
+              "profile",
+              "email"
+            ]
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -150,10 +206,21 @@
           "400": {
             "description": "Invalid request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Book not found"
           }
-        }
+        },
+        "security": [
+          {
+            "googleAuth": [
+              "profile",
+              "email"
+            ]
+          }
+        ]
       }
     }
   },

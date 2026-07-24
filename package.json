@@ -20,7 +20,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "node server.js",
-    "build": "npm install"
+    "build": "npm install",
+    "swagger": "node config/swagger.js"
   },
   "dependencies": {
     "celebrate": "^12.1.2",

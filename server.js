@@ -14,7 +14,7 @@ const { errors: celebrateErrors } = require('celebrate');
 const contactsSwaggerFile = require('./config/swagger-contacts-output.json');
 const booksSwaggerFile = require('./config/swagger-books-output.json');
 const { errors, globalErrors } = require('./controllers/errors/errors');
-const routers = require('./routes/contacts');
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -55,7 +55,6 @@ app.use('/api-docs-books', swaggerUi.serveFiles(booksSwaggerFile, {}), swaggerUi
 })();
 
 app.use(authRouter);
-app.use(routers);
 app.use(contactsRouter);
 app.use(booksRouter);
 app.use(celebrateErrors());

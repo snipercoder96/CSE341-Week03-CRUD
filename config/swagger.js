@@ -9,6 +9,19 @@ const contactsDoc = {
     },
     host: process.env.SWAGGER_HOST || 'localhost:3000',
     schemes: ['https', 'http'],
+    securityDefinitions: {
+        googleAuth: {
+            type: 'oauth2',
+            flow: 'accessCode',
+            authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
+            tokenUrl: 'https://oauth2.googleapis.com/token',
+            scopes: {
+                profile: 'Access your profile info',
+                email: 'Access your email address',
+            },
+        },
+    },
+    
     tags: [
         {
             name: 'Contacts',
@@ -43,6 +56,18 @@ const booksDoc = {
     },
     host: process.env.SWAGGER_HOST || 'localhost:3000',
     schemes: ['https', 'http'],
+    securityDefinitions: {
+        googleAuth: {
+            type: 'oauth2',
+            flow: 'accessCode',
+            authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
+            tokenUrl: 'https://oauth2.googleapis.com/token',
+            scopes: {
+                profile: 'Access your profile info',
+                email: 'Access your email address',
+            },
+        }
+    },
     tags: [
         {
             name: 'Books',
